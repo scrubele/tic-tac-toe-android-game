@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TIC TAC TOE</string>
+    <string name="player_1_0">Player 1: 0</string>
+    <string name="player_2_0">Player 2: 0</string>
+    <string name="tic_tac_toe">TIC TAC TOE</string>
+    <string name="OFFLINE">START OFFLINE GAME</string>
+    <string name="ONLINE">START ONLINE GAME</string>
+    <string name="RANK">RANK</string>
+</resources>
