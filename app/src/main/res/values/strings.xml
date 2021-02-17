@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TIC TAC TOE</string>
+    <string name="player_1">Player 1: </string>
+    <string name="player_2">Player 2: </string>
+    <string name="tic_tac_toe">TIC TAC TOE</string>
+    <string name="OFFLINE">START OFFLINE GAME</string>
+    <string name="ONLINE">START ONLINE GAME</string>
+    <string name="RANK">RANK</string>
+    <string name="online_players">ONLINE PLAYERS</string>
+    <string name="game_requests">GAME REQUESTS</string>
+    <string name="log_in">LOG IN</string>
+    <string name="please_enter_your_email">Please Enter Your Email</string>
+    <string name="home">Home</string>
+    <string name="_5">5</string>
+    <string name="final_score_is">Final Score Is:</string>
+    <string name="please_enter_your_password">please enter your password</string>
+    <string name="sign_in">Sign In</string>
+</resources>

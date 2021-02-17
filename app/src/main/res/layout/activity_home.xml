@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <Button
+        android:id="@+id/rank"
+        android:layout_width="332dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/mybutton"
+        android:onClick="startOnLineGame"
+        android:text="@string/RANK"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/online" />
+
+    <Button
+        android:id="@+id/offline"
+        android:layout_width="332dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/mybutton"
+        android:onClick="startOffLineGame"
+        android:text="@string/OFFLINE"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/online"
+        android:layout_width="332dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:onClick="startOnLineGame"
+        android:background="@drawable/mybutton"
+        android:text="@string/ONLINE"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offline" />
+</androidx.constraintlayout.widget.ConstraintLayout>
