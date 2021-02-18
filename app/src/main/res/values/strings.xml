@@ -15,4 +15,6 @@
     <string name="final_score_is">Final Score Is:</string>
     <string name="please_enter_your_password">please enter your password</string>
     <string name="sign_in">Sign In</string>
+    <string name="end_game">End Game</string>
+    <string name="reset">Reset</string>
 </resources>

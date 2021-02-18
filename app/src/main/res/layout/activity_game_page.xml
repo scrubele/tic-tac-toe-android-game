@@ -56,9 +56,9 @@
             android:background="@drawable/mybutton"
             android:gravity="center_horizontal"
             android:onClick="EndGame"
-            android:text="End Game"
+            android:text="@string/end_game"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="14sp"
             app:backgroundTint="@color/Brown"
             app:layout_constraintBottom_toBottomOf="@+id/button_reset" />
 
@@ -78,9 +78,9 @@
             android:layout_toRightOf="@+id/text_view_p1"
             android:background="@drawable/mybutton"
             android:gravity="center_horizontal"
-            android:text="Reset"
+            android:text="@string/reset"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="14sp"
             app:backgroundTint="@color/Brown" />
 
     </RelativeLayout>
@@ -92,6 +92,7 @@
 
         <Button
             android:id="@+id/button_00"
+
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
