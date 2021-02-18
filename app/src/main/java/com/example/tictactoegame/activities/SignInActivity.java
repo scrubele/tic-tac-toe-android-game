@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.tictactoegame.R;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,10 +60,11 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void setupViews() {
-        email = findViewById(R.id.email_sign_in);
-        password = findViewById(R.id.password_sign_in);
-        userSignIn = findViewById(R.id.sign_in_button);
-        linkSignUp = findViewById(R.id.sign_up_link);
+        MaterialCardView relativeLayout = (MaterialCardView) findViewById(R.id.login_layout);
+        email = relativeLayout.findViewById(R.id.email_sign_in);
+        password = relativeLayout.findViewById(R.id.password_sign_in);
+        userSignIn = relativeLayout.findViewById(R.id.sign_in_button);
+        linkSignUp = relativeLayout.findViewById(R.id.sign_up_link);
         progressBar = findViewById(R.id.progressBar);
         user = FirebaseAuth.getInstance().getCurrentUser();
     }

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tictactoegame.R;
 import com.example.tictactoegame.helpers.ConfigHelper;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,12 +61,13 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void setupViews() {
-        email = findViewById(R.id.email_sign_up);
-        password = findViewById(R.id.password_sign_up);
-        phone = findViewById(R.id.phone_sign_up);
-        name = findViewById(R.id.name_sign_up);
-        userSignUp = findViewById(R.id.sign_up_button);
-        linkSignIn = findViewById(R.id.sign_in_link);
+        MaterialCardView relativeLayout = (MaterialCardView) findViewById(R.id.register_layout);
+        email = relativeLayout.findViewById(R.id.email_sign_up);
+        password = relativeLayout.findViewById(R.id.password_sign_up);
+        phone = relativeLayout.findViewById(R.id.phone_sign_up);
+        name = relativeLayout.findViewById(R.id.name_sign_up);
+        userSignUp = relativeLayout.findViewById(R.id.sign_up_button);
+        linkSignIn = relativeLayout.findViewById(R.id.sign_in_link);
         progressBar = findViewById(R.id.progress_bar_sign_up);
     }
 

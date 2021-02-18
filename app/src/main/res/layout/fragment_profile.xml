@@ -12,45 +12,72 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/user_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="6dp"
-            android:textSize="18sp" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image_profile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:contentDescription="@string/profile_image"
                 tools:srcCompat="@tools:sample/avatars[0]" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/new_image_button"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_margin="7dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="@string/upload_new"
-                android:textColor="@android:color/white" />
+                style="@style/loginButton"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/upload_new" />
 
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/email_text"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="6dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enter_new_email"
@@ -80,19 +107,15 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/new_email_button"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_margin="7dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="@string/save"
-                android:textColor="@android:color/white" />
-
-
+                style="@style/loginButton"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/update" />
         </LinearLayout>
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enter_new_name"
@@ -120,14 +143,11 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/new_name_button"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_margin="7dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="@string/save"
-                android:textColor="@android:color/white" />
-
+                style="@style/loginButton"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/update" />
         </LinearLayout>
 
 
