@@ -1,4 +1,4 @@
-package com.example.tictactaoegame;
+package com.example.tictactaoegame.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tictactaoegame.R;
 
 public class OfflinePageActivity extends AppCompatActivity implements View.OnClickListener {
 

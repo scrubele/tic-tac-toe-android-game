@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTACTAOEGAME">
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".ScorePageActivity" />
-        <activity android:name=".OfflinePageActivity" />
-        <activity android:name=".ChoosePlayerActivity" />
-        <activity android:name=".HomePageActivity">
+        <activity android:name=".activities.SignInActivity" />
+        <activity android:name=".activities.ScorePageActivity" />
+        <activity android:name=".activities.OfflinePageActivity" />
+        <activity android:name=".activities.ChoosePlayerActivity" />
+        <activity android:name=".activities.HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,8 +1,10 @@
-package com.example.tictactaoegame;
+package com.example.tictactaoegame.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tictactaoegame.R;
 
 public class SignInActivity extends AppCompatActivity {
 
