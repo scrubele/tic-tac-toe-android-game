@@ -1,4 +1,4 @@
-package com.example.tictactaoegame.activities;
+package com.example.tictactoegame.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.example.tictactaoegame.R;
+import com.example.tictactoegame.R;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -21,10 +21,10 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
 
-    public void startOffLineGame(View view) {
-        Intent intent = new Intent(getApplicationContext(), ChoosePlayerActivity.class);
-        startActivity(intent);
-    }
+//    public void startOffLineGame(View view) {
+//        Intent intent = new Intent(getApplicationContext(), ChoosePlayerActivity.class);
+//        startActivity(intent);
+//    }
 
 
 

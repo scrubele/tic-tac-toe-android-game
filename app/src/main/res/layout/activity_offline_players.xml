@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White"
-    tools:context=".activities.ChoosePlayerActivity" >
+    tools:context=".activities.ChoosePlayerActivity">
+
     <View
         android:id="@+id/view"
         android:layout_width="349dp"
@@ -16,41 +17,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.55" />
+
     <EditText
         android:id="@+id/PLAYER1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/player_1"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
+
     <EditText
         android:id="@+id/PLAYER2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/player_2"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/PLAYER1" />
+
     <Button
         android:id="@+id/LoginBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/mybutton"
+        android:onClick="Submit"
         android:text="Submit"
         app:backgroundTint="@color/DarkViolet"
-        android:background="@drawable/mybutton"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/PLAYER2"
-        android:onClick="Submit"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/PLAYER2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

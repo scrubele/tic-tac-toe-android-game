@@ -1,4 +1,4 @@
-package com.example.tictactaoegame.activities;
+package com.example.tictactoegame.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 
-import com.example.tictactaoegame.R;
+import com.example.tictactoegame.R;
 
 public class ChoosePlayerActivity extends AppCompatActivity {
 
