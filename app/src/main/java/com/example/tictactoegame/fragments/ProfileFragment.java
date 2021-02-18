@@ -225,6 +225,7 @@ public class ProfileFragment extends Fragment {
     private void showProfileImage(String mUri) {
         Picasso.get()
                 .load(mUri)
+                .placeholder(R.drawable.user_placeholder)
                 .resize(TARGET_WIDTH, TARGET_HEIGHT)
                 .centerCrop()
                 .into(profileImage);
