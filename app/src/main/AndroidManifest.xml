@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTACTAOEGAME">
         <activity android:name=".SignInActivity" />
-        <activity android:name=".Score" />
-        <activity android:name=".GamePage" />
-        <activity android:name=".OfflinePlayers" />
-        <activity android:name=".Home">
+        <activity android:name=".ScorePageActivity" />
+        <activity android:name=".OfflinePageActivity" />
+        <activity android:name=".ChoosePlayerActivity" />
+        <activity android:name=".HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

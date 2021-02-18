@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class Home extends AppCompatActivity {
-
+public class HomePageActivity extends AppCompatActivity {
 
 
     @Override
@@ -20,8 +19,8 @@ public class Home extends AppCompatActivity {
     }
 
 
-    public void startOffLineGame(View view){
-        Intent intent = new Intent(getApplicationContext(), OfflinePlayers.class);
+    public void startOffLineGame(View view) {
+        Intent intent = new Intent(getApplicationContext(), ChoosePlayerActivity.class);
         startActivity(intent);
     }
 

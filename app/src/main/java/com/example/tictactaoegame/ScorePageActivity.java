@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-public class Score extends AppCompatActivity {
+public class ScorePageActivity extends AppCompatActivity {
 
 
     String NAME1;
@@ -27,14 +27,14 @@ public class Score extends AppCompatActivity {
         TextView TextViewScore1 = (TextView) findViewById(R.id.score_1);
         TextView TextViewScore2 = (TextView) findViewById(R.id.score_2);
 
-        PLAYER1 =  findViewById(R.id.Player1Points);
-        PLAYER2 =  findViewById(R.id.Player2Points);
+        PLAYER1 = findViewById(R.id.Player1Points);
+        PLAYER2 = findViewById(R.id.Player2Points);
 
-        String scor1=getIntent().getStringExtra("SCORE1");
-        String scor2=getIntent().getStringExtra("SCORE2");
+        String scor1 = getIntent().getStringExtra("SCORE1");
+        String scor2 = getIntent().getStringExtra("SCORE2");
 
-        String NAME1=getIntent().getStringExtra("name1");
-        String NAME2=getIntent().getStringExtra("name2");
+        String NAME1 = getIntent().getStringExtra("name1");
+        String NAME2 = getIntent().getStringExtra("name2");
 
         TextViewScore1.setText(scor1);
         TextViewScore2.setText(scor2);
@@ -44,9 +44,9 @@ public class Score extends AppCompatActivity {
 
     }
 
-    public void home(View view){
+    public void home(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), Home.class);
+        Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
         startActivity(intent);
     }
 }
