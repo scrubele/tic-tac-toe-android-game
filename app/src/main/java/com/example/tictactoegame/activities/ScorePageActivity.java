@@ -1,4 +1,4 @@
-package com.example.tictactaoegame.activities;
+package com.example.tictactoegame.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.example.tictactaoegame.R;
+import com.example.tictactoegame.R;
 
 public class ScorePageActivity extends AppCompatActivity {
 
@@ -48,7 +48,7 @@ public class ScorePageActivity extends AppCompatActivity {
 
     public void home(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }

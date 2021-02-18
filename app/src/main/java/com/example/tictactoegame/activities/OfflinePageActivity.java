@@ -1,4 +1,4 @@
-package com.example.tictactaoegame.activities;
+package com.example.tictactoegame.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tictactaoegame.R;
+import com.example.tictactoegame.R;
 
 public class OfflinePageActivity extends AppCompatActivity implements View.OnClickListener {
 
+    String NAME1;
+    String NAME2;
     private Button[][] buttons = new Button[3][3];
     private boolean player1Turn = true;
     private int roundCount;
@@ -22,9 +24,6 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
     private int Player2Points;
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-    String NAME1;
-    String NAME2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
