@@ -24,8 +24,6 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
     private int Player2Points;
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-    private TextView user1_name;
-    private TextView user2_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +34,13 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
-        user1_name = findViewById(R.id.user1_name);
-        user2_name = findViewById(R.id.user2_name);
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.Aqua));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.Black));
 
         NAME1 = getIntent().getStringExtra("name1");
         NAME2 = getIntent().getStringExtra("name2");
-        textViewPlayer1.setText("0");
-        textViewPlayer2.setText("0");
-        user1_name.setText(NAME1);
-        user2_name.setText(NAME2);
-        user1_name.setTextColor(getResources().getColor(R.color.Red));
-        user2_name.setTextColor(getResources().getColor(R.color.Black));
+        textViewPlayer1.setText(NAME1);
+        textViewPlayer2.setText(NAME2);
 
 
         for (int i = 0; i < 5; i++) {
@@ -77,14 +71,13 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
         if (player1Turn) {
             ((Button) v).setText("X");
-            user1_name.setTextColor(getResources().getColor(R.color.Black));
-            user2_name.setTextColor(getResources().getColor(R.color.Red));
+            textViewPlayer1.setTextColor(getResources().getColor(R.color.Black));
+            textViewPlayer2.setTextColor(getResources().getColor(R.color.Aqua));
         } else {
             ((Button) v).setText("O");
-            user1_name.setTextColor(getResources().getColor(R.color.Red));
-            user2_name.setTextColor(getResources().getColor(R.color.Black));
+            textViewPlayer1.setTextColor(getResources().getColor(R.color.Aqua));
+            textViewPlayer2.setTextColor(getResources().getColor(R.color.Black));
         }
-
 
         roundCount++;
         if (checkForWin()) {
@@ -111,17 +104,17 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
 
         for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (field[i][j].equals(field[i][j + 1]) && field[i][j].equals(field[i][j + 2]) && !field[i][j].equals("")) {
+            for (int j = 0; j < 2; j++) {
+                if (field[i][j].equals(field[i][j + 1]) && field[i][j].equals(field[i][j + 2]) && field[i][j].equals(field[i][j + 3]) && !field[i][j].equals("")) {
                     return true;
                 }
             }
 
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 5; j++) {
-                if (field[i][j].equals(field[i + 1][j]) && field[i][j].equals(field[i + 2][j]) && !field[i][j].equals("")) {
+                if (field[i][j].equals(field[i + 1][j]) && field[i][j].equals(field[i + 2][j]) && field[i][j].equals(field[i + 3][j]) && !field[i][j].equals("")) {
                     return true;
                 }
             }
@@ -129,21 +122,20 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-        /*for (int i=0; i<3;i++){
-            if (field[i][i].equals(field[i+1][i+1]) && field[i][i].equals(field[i+2][i+2]) && !field[0][0].equals("")) {
+        for (int i = 0; i < 2; i++) {
+            if (field[i][i].equals(field[i + 1][i + 1]) && field[i][i].equals(field[i + 2][i + 2]) && field[i][i].equals(field[i + 3][i + 3]) && !field[i][i].equals("")) {
                 return true;
             }
-        }*/
+        }
 
 
-        for (int i = 4; i > 1; i--) {
-            for (int j = 0; j < 3; j++) {
-                if (field[i][j].equals(field[i - 1][j + 1]) && field[i][j].equals(field[i - 2][j + 2]) && !field[i][j].equals("")) {
+        for (int i = 4; i > 2; i--) {
+            for (int j = 0; j < 2; j++) {
+                if (field[i][j].equals(field[i - 1][j + 1]) && field[i][j].equals(field[i - 2][j + 2]) && field[i][j].equals(field[i - 3][j + 3]) && !field[i][j].equals("")) {
                     return true;
                 }
             }
         }
-
         return false;
 
     }
@@ -169,10 +161,8 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void updatePointsText() {
-        textViewPlayer1.setText(" " + Player1Points);
-        textViewPlayer2.setText(" " + Player2Points);
-
-
+        textViewPlayer1.setText(NAME1 + " : " + Player1Points);
+        textViewPlayer2.setText(NAME2 + " : " + Player2Points);
     }
 
     private void resetBoard() {
@@ -183,8 +173,8 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
         roundCount = 0;
         player1Turn = true;
-        user1_name.setTextColor(getResources().getColor(R.color.Red));
-        user2_name.setTextColor(getResources().getColor(R.color.Black));
+        textViewPlayer2.setTextColor(getResources().getColor(R.color.Black));
+        textViewPlayer1.setTextColor(getResources().getColor(R.color.Aqua));
     }
 
     @Override
