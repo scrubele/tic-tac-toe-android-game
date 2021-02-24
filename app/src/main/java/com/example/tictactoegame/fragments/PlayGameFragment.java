@@ -49,9 +49,9 @@ public class PlayGameFragment extends Fragment implements View.OnClickListener {
             case R.id.offlineGame:
                 startOffLineGame(v);
                 break;
-            case R.id.onlineGame:
-                startOnLineGame(v);
-                break;
+//            case R.id.onlineGame:
+//                startOnLineGame(v);
+//                break;
             case R.id.rank:
                 //startRank(v);
                 break;

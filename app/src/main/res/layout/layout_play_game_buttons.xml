@@ -15,12 +15,12 @@
         android:layout_gravity="center"
         android:padding="@dimen/loginViewsMargin">
 
-        <Button
-            android:id="@+id/onlineGame"
-            style="@style/loginButton"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="@string/ONLINE" />
+<!--        <Button-->
+<!--            android:id="@+id/onlineGame"-->
+<!--            style="@style/loginButton"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="@dimen/loginViewsMargin"-->
+<!--            android:text="@string/ONLINE" />-->
 
         <Button
             android:id="@+id/offlineGame"
