@@ -103,7 +103,7 @@ tools:context=".activities.FByFGameActivity">
         android:gravity="center|center_horizontal|center_vertical"
         android:textColor="@color/Black"
         android:textSize="36sp"
-        app:backgroundTint="@color/Bisque"
+        app:backgroundTint="@color/LightSkyBlue"
         tools:textStyle="bold" />
 
 
@@ -129,7 +129,7 @@ tools:context=".activities.FByFGameActivity">
         android:textColor="@color/Black"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/Bisque" />
+        app:backgroundTint="@color/LightSkyBlue" />
 
     <Button
         android:id="@+id/button_03"
@@ -142,7 +142,7 @@ tools:context=".activities.FByFGameActivity">
         android:gravity="center|center_horizontal|center_vertical"
         android:textColor="@color/Black"
         android:textSize="36sp"
-        app:backgroundTint="@color/Bisque"
+        app:backgroundTint="@color/AliceBlue"
         tools:textStyle="bold" />
 
 
@@ -155,7 +155,7 @@ tools:context=".activities.FByFGameActivity">
         android:freezesText="true"
         android:textColor="@color/Black"
         android:textSize="36sp"
-        app:backgroundTint="@color/AliceBlue"
+        app:backgroundTint="@color/LightSkyBlue"
         tools:textStyle="bold" />
 </LinearLayout>
 
@@ -185,7 +185,7 @@ tools:context=".activities.FByFGameActivity">
         android:freezesText="true"
         android:textColor="@color/Black"
         android:textSize="36sp"
-        app:backgroundTint="@color/Bisque" />
+        app:backgroundTint="@color/LightSkyBlue" />
 
     <Button
         android:id="@+id/button_12"
@@ -210,7 +210,7 @@ tools:context=".activities.FByFGameActivity">
         android:gravity="center|center_horizontal|center_vertical"
         android:textColor="@color/Black"
         android:textSize="36sp"
-        app:backgroundTint="@color/Bisque"
+        app:backgroundTint="@color/LightSkyBlue"
         tools:textStyle="bold" />
 
 
@@ -242,7 +242,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/LightSkyBlue" />
 
         <Button
             android:id="@+id/button_21"
@@ -266,7 +266,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/LightSkyBlue" />
 
         <Button
             android:id="@+id/button_23"
@@ -279,7 +279,7 @@ tools:context=".activities.FByFGameActivity">
             android:gravity="center|center_horizontal|center_vertical"
             android:textColor="@color/Black"
             android:textSize="36sp"
-            app:backgroundTint="@color/Bisque"
+            app:backgroundTint="@color/AliceBlue"
             tools:textStyle="bold" />
 
 
@@ -292,7 +292,7 @@ tools:context=".activities.FByFGameActivity">
             android:freezesText="true"
             android:textColor="@color/Black"
             android:textSize="36sp"
-            app:backgroundTint="@color/AliceBlue"
+            app:backgroundTint="@color/LightSkyBlue"
             tools:textStyle="bold" />
 
     </LinearLayout>
@@ -312,7 +312,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/AliceBlue" />
 
         <Button
             android:id="@+id/button_31"
@@ -324,7 +324,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/AliceBlue" />
+            app:backgroundTint="@color/LightSkyBlue" />
 
         <Button
             android:id="@+id/button_32"
@@ -336,7 +336,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/AliceBlue" />
 
         <Button
             android:id="@+id/button_33"
@@ -349,7 +349,7 @@ tools:context=".activities.FByFGameActivity">
             android:gravity="center|center_horizontal|center_vertical"
             android:textColor="@color/Black"
             android:textSize="36sp"
-            app:backgroundTint="@color/Bisque"
+            app:backgroundTint="@color/LightSkyBlue"
             tools:textStyle="bold" />
 
 
@@ -382,7 +382,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/LightSkyBlue" />
 
         <Button
             android:id="@+id/button_41"
@@ -406,7 +406,7 @@ tools:context=".activities.FByFGameActivity">
             android:textColor="@color/Black"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/Bisque" />
+            app:backgroundTint="@color/LightSkyBlue" />
 
         <Button
             android:id="@+id/button_43"
@@ -419,7 +419,7 @@ tools:context=".activities.FByFGameActivity">
             android:gravity="center|center_horizontal|center_vertical"
             android:textColor="@color/Black"
             android:textSize="36sp"
-            app:backgroundTint="@color/Bisque"
+            app:backgroundTint="@color/AliceBlue"
             tools:textStyle="bold" />
 
 
@@ -432,7 +432,7 @@ tools:context=".activities.FByFGameActivity">
             android:freezesText="true"
             android:textColor="@color/Black"
             android:textSize="36sp"
-            app:backgroundTint="@color/AliceBlue"
+            app:backgroundTint="@color/LightSkyBlue"
             tools:textStyle="bold" />
 
     </LinearLayout>
