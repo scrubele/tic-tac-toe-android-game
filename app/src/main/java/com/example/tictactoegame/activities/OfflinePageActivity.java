@@ -45,6 +45,8 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         textViewPlayer2.setText("0");
         user1_name.setText(NAME1);
         user2_name.setText(NAME2);
+        user1_name.setTextColor(getResources().getColor(R.color.Red));
+        user2_name.setTextColor(getResources().getColor(R.color.Black));
 
 
         for (int i = 0; i < 3; i++) {
@@ -69,6 +71,7 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+
     @Override
     public void onClick(View v) {
         if (!((Button) v).getText().toString().equals("")) {
@@ -76,8 +79,12 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         }
         if (player1Turn) {
             ((Button) v).setText("X");
+            user1_name.setTextColor(getResources().getColor(R.color.Black));
+            user2_name.setTextColor(getResources().getColor(R.color.Red));
         } else {
             ((Button) v).setText("O");
+            user1_name.setTextColor(getResources().getColor(R.color.Red));
+            user2_name.setTextColor(getResources().getColor(R.color.Black));
         }
 
         roundCount++;
@@ -163,6 +170,8 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         }
         roundCount = 0;
         player1Turn = true;
+        user1_name.setTextColor(getResources().getColor(R.color.Red));
+        user2_name.setTextColor(getResources().getColor(R.color.Black));
     }
 
     @Override

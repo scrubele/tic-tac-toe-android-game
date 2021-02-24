@@ -63,5 +63,7 @@
     <string name="reset_password">Reset password</string>
     <string name="failed_to_send_email">Failed to send reset email!</string>
     <string name="sent_intstructions_to_reset_password">We have sent you instructions to reset your password!</string>
+    <string name="player_x">Player X</string>
+    <string name="player_0">Player O</string>
 
 </resources>
