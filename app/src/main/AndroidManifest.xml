@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tictactoegame">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".utils.ApplicationEx"
         android:allowBackup="true"
@@ -12,6 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTACTAOEGAME"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".activities.FByFGameActivity"></activity>
+        <activity android:name=".activities.OnlinePlayers"></activity>
         <activity android:name=".activities.ScorePageActivity" />
         <activity android:name=".activities.OfflinePageActivity" />
         <activity android:name=".activities.ChoosePlayerActivity" />
@@ -20,6 +27,7 @@
             android:parentActivityName=".activities.MainActivity">
             <intent-filter>
                 <action android:name="6" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -38,31 +46,22 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--        <receiver android:name=".utils.ConnectionChangeReceiver">-->
-        <!--            <intent-filter>-->
-        <!--                <action-->
-        <!--                    android:name="android.net.conn.CONNECTIVITY_CHANGE"-->
-        <!--                    tools:ignore="BatteryLife" />-->
-        <!--                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />-->
-        <!--            </intent-filter>-->
-        <!--        </receiver>-->
-
+        </activity> <!-- <receiver android:name=".utils.ConnectionChangeReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action -->
+        <!-- android:name="android.net.conn.CONNECTIVITY_CHANGE" -->
+        <!-- tools:ignore="BatteryLife" /> -->
+        <!-- <action android:name="android.net.wifi.WIFI_STATE_CHANGED" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
         <service android:name=".utils.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

@@ -16,16 +16,16 @@
             android:layout_height="0dp"
             android:layout_marginTop="120dp"
             android:background="@drawable/mybutton"
-            android:onClick="startOnLineGame"
             android:text="@string/RANK"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/online" />
+            app:layout_constraintTop_toBottomOf="@+id/onlineGame" />
 
         <Button
             android:id="@+id/offlineGame"
+            android:onClick="startOffLineGame"
             android:layout_width="332dp"
             android:layout_height="53dp"
             android:layout_marginTop="120dp"
@@ -36,15 +36,15 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rank"
-            tools:ignore="MissingConstraints" />
+            />
 
         <Button
-            android:id="@+id/online"
+            android:id="@+id/onlineGame"
             android:layout_width="332dp"
             android:layout_height="0dp"
+            android:onClick="startOnLineGame"
             android:layout_marginTop="120dp"
             android:background="@drawable/mybutton"
-            android:onClick="startOnLineGame"
             android:text="@string/ONLINE"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"

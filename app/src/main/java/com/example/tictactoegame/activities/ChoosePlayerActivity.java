@@ -33,7 +33,7 @@ public class ChoosePlayerActivity extends AppCompatActivity {
         String nam1 = NAME1.getText().toString();
         String nam2 = NAME2.getText().toString();
 
-        Intent intent = new Intent(getApplicationContext(), OfflinePageActivity.class);
+        Intent intent = new Intent(getApplicationContext(), FByFGameActivity.class);
         intent.putExtra("name1", nam1);
         intent.putExtra("name2", nam2);
         startActivity(intent);

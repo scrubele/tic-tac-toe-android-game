@@ -253,4 +253,9 @@ public class ProfileFragment extends Fragment {
             return true;
         }
     }
+
+    public String getName(){
+        String name=profileName.getText().toString();
+        return name;
+    }
 }
