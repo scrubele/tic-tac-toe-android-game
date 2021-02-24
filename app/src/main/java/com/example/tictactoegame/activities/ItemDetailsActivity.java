@@ -1,7 +1,9 @@
 package com.example.tictactoegame.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,14 +21,19 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private static final int TARGET_HEIGHT = 100;
     private AlertDialog dialog;
 
+    private TextView name;
+    private TextView goods;
+    private TextView address;
+    private TextView company;
+    private ImageView imageView;
+    private ImageButton backButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
         FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
-
-        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.ven_details));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         displayTicTacToeFromIntent();
     }
@@ -38,19 +45,27 @@ public class ItemDetailsActivity extends AppCompatActivity {
         String ticTacToeCompany = getIntent().getStringExtra("ticTacToe_company");
         String imageName = getIntent().getStringExtra("ticTacToe_img_url");
 
+        setupViews();
         setupFields(ticTacToeName, ticTacToeGoods, ticTacToeAddress, ticTacToeCompany, imageName);
         if (getIntent().hasExtra("ticTacToe_err_mes")) {
             showDialog(getIntent().getStringExtra("ticTacToe_err_mes"));
         }
+        backButton.setOnClickListener(v -> {
+            finish();
+        });
+    }
+
+    private void setupViews() {
+        name = findViewById(R.id.item_tic_tac_toe_name);
+        goods = findViewById(R.id.item_tic_tac_toe_good);
+        address = findViewById(R.id.item_tic_tac_toe_address);
+        company = findViewById(R.id.item_tic_tac_toe_company);
+        imageView = findViewById(R.id.item_tic_tac_toe_img);
+        backButton = findViewById(R.id.button_back);
     }
 
     private void setupFields(String ticTacToeName, String ticTacToeGoods, String ticTacToeAddress,
                              String ticTacToeCompany, String imageName) {
-        TextView name = findViewById(R.id.ven_name_detailed);
-        TextView goods = findViewById(R.id.ven_goods_detailed);
-        TextView address = findViewById(R.id.ven_address_detailed);
-        TextView company = findViewById(R.id.ven_company_detailed);
-        ImageView imageView = findViewById(R.id.ven_img_detailed);
         Picasso.get()
                 .load(imageName)
                 .placeholder(R.drawable.tic_tac_toe_placeholder)

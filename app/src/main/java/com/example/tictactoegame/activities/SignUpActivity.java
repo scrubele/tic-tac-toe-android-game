@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,8 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText phone;
     private EditText name;
 
-    private Button linkSignIn;
     private Button userSignUp;
+    private ImageButton backButton;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -54,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
         );
 
-        linkSignIn.setOnClickListener(v -> {
+        backButton.setOnClickListener(v -> {
             startActivity(new Intent(this, SignInActivity.class));
         });
 
@@ -67,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
         phone = relativeLayout.findViewById(R.id.phone_sign_up);
         name = relativeLayout.findViewById(R.id.name_sign_up);
         userSignUp = relativeLayout.findViewById(R.id.sign_up_button);
-        linkSignIn = relativeLayout.findViewById(R.id.sign_in_link);
+        backButton = findViewById(R.id.button_back);
         progressBar = findViewById(R.id.progress_bar_sign_up);
     }
 

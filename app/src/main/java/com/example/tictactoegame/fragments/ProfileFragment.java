@@ -19,7 +19,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.tictactoegame.R;
+import com.example.tictactoegame.activities.ChoosePlayerActivity;
+import com.example.tictactoegame.activities.SignInActivity;
 import com.example.tictactoegame.helpers.ConfigHelper;
+import com.example.tictactoegame.utils.ApplicationEx;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,6 +51,7 @@ public class ProfileFragment extends Fragment {
     private ImageView profileImage;
     private Button newEmailButton;
     private Button newNameButton;
+    private Button signOutButton;
     private EditText newEmail;
     private EditText newName;
     private TextView profileName;
@@ -55,6 +59,7 @@ public class ProfileFragment extends Fragment {
     private ProgressDialog progressDialog;
 
     private FirebaseUser firebaseUser;
+    private FirebaseAuth mAuth;
     private DatabaseReference reference;
 
     private StorageReference storageReference;
@@ -91,7 +96,7 @@ public class ProfileFragment extends Fragment {
         uploadImgButton.setOnClickListener(view -> openImage());
         newNameButton.setOnClickListener(view -> updateName());
         newEmailButton.setOnClickListener(view -> updateEmail());
-
+        signOutButton.setOnClickListener(view -> signOut());
         return inflate;
     }
 
@@ -143,10 +148,12 @@ public class ProfileFragment extends Fragment {
     private void setupViews(View inflate) {
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = getApplicationEx().getAuth();
         reference = FirebaseDatabase.getInstance(ConfigHelper.getConfigValue(this.getContext(), "firebase_url")).getReference("users").child(firebaseUser.getUid());
         uploadImgButton = inflate.findViewById(R.id.new_image_button);
         newEmailButton = inflate.findViewById(R.id.new_email_button);
         newNameButton = inflate.findViewById(R.id.new_name_button);
+        signOutButton = inflate.findViewById(R.id.sign_out_button);
         newName = inflate.findViewById(R.id.name_new);
         newEmail = inflate.findViewById(R.id.email_new);
         profileName = inflate.findViewById(R.id.username);
@@ -252,5 +259,16 @@ public class ProfileFragment extends Fragment {
             newName.setError(null);
             return true;
         }
+    }
+
+    private void signOut() {
+        mAuth.signOut();
+        Intent intent = new Intent(Objects.requireNonNull(this.getActivity()).getApplicationContext(), SignInActivity.class);
+        startActivity(intent);
+        getActivity().onBackPressed();
+    }
+
+    private ApplicationEx getApplicationEx() {
+        return ((ApplicationEx) getActivity().getApplication());
     }
 }

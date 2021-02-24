@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/loginCard"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/whiteCardColor"
+    android:elevation="5dp"
+    app:cardCornerRadius="@dimen/loginCardRadius">
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin">
+
+        <TextView
+            android:id="@+id/FinalScore"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="@string/final_score_is"
+            android:textAlignment="center"
+
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,RtlCompat" />
+
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                android:id="@+id/Player1Points"
+                android:layout_width="150dp"
+                android:layout_height="32dp"
+                android:text="@string/player_1"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FinalScore"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/score_1"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="@string/_5"
+                android:textSize="24sp"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Player1Points"
+                app:layout_constraintTop_toBottomOf="@+id/FinalScore"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                android:id="@+id/Player2Points"
+                android:layout_width="150dp"
+                android:layout_height="33dp"
+                android:text="@string/player_2"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Player1Points" />
+
+            <TextView
+                android:id="@+id/score_2"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:text="@string/_5"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Player2Points"
+                app:layout_constraintTop_toBottomOf="@+id/score_1"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:onClick="home"
+            android:text="@string/home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

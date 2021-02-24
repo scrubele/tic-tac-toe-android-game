@@ -24,6 +24,8 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
     private int Player2Points;
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+    private TextView user1_name;
+    private TextView user2_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,15 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
+        user1_name = findViewById(R.id.user1_name);
+        user2_name = findViewById(R.id.user2_name);
 
         NAME1 = getIntent().getStringExtra("name1");
         NAME2 = getIntent().getStringExtra("name2");
-        textViewPlayer1.setText(NAME1);
-        textViewPlayer2.setText(NAME2);
+        textViewPlayer1.setText("0");
+        textViewPlayer2.setText("0");
+        user1_name.setText(NAME1);
+        user2_name.setText(NAME2);
 
 
         for (int i = 0; i < 3; i++) {
@@ -144,8 +150,8 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void updatePointsText() {
-        textViewPlayer1.setText(NAME1 + " : " + Player1Points);
-        textViewPlayer2.setText(NAME2 + " : " + Player2Points);
+        textViewPlayer1.setText(" "+ Player1Points);
+        textViewPlayer2.setText(" "+ Player2Points);
 
     }
 

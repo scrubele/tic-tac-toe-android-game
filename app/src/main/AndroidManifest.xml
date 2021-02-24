@@ -12,12 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTACTAOEGAME"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activities.ScorePageActivity" />
-        <activity android:name=".activities.OfflinePageActivity" />
-        <activity android:name=".activities.ChoosePlayerActivity" />
+        <activity
+            android:name=".activities.ScorePageActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
+            android:name=".activities.OfflinePageActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
+            android:name=".activities.ResetPasswordActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
+            android:name=".activities.ChoosePlayerActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity
             android:name=".activities.ItemDetailsActivity"
-            android:parentActivityName=".activities.MainActivity">
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME">
             <intent-filter>
                 <action android:name="6" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -25,7 +35,8 @@
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity
             android:name=".activities.SignUpActivity"
             android:label="Sign Up"

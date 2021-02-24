@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:theme="@style/Theme.TICTACTAOEGAME"
+
     tools:context=".activities.MainActivity">
 
     <com.google.android.material.tabs.TabLayout

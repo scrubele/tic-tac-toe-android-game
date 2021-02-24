@@ -6,65 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".fragments.PlayGameFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        style="@style/parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/rank"
-            android:layout_width="332dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="120dp"
-            android:background="@drawable/mybutton"
-            android:onClick="startOnLineGame"
-            android:text="@string/RANK"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/online" />
+        <RelativeLayout
+            style="@style/parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/offlineGame"
-            android:layout_width="332dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="120dp"
-            android:background="@drawable/mybutton"
-            android:text="@string/OFFLINE"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rank"
-            tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/online"
-            android:layout_width="332dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="120dp"
-            android:background="@drawable/mybutton"
-            android:onClick="startOnLineGame"
-            android:text="@string/ONLINE"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:weightSum="12">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+                <LinearLayout
+                    style="@style/parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/login_shape_bk"
+                    android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="172dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        style="@style/parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_play_game"
+                android:layout_width="match_parent"
+                android:layout_height="520dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="60dp"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+
+                <include
+                    android:id="@+id/layout_play_game"
+                    layout="@layout/layout_play_game_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="500dp"
+                android:translationZ="-12dp"
+                android:weightSum="22">
+
+                <LinearLayout
+                    style="@style/parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/login_shape_bk_flipped"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </FrameLayout>
+
+

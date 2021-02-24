@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tictactoegame.R;
@@ -25,6 +26,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private ProgressBar progressBar;
+    private TextView resetPasswordTextView;
 
     private Button userSignIn;
     private Button linkSignUp;
@@ -49,6 +51,9 @@ public class SignInActivity extends AppCompatActivity {
         linkSignUp.setOnClickListener(v -> {
             startActivity(new Intent(this, SignUpActivity.class));
         });
+        resetPasswordTextView.setOnClickListener(v -> {
+            startActivity(new Intent(this, ResetPasswordActivity.class));
+        });
     }
 
     public void staySigned() {
@@ -65,6 +70,7 @@ public class SignInActivity extends AppCompatActivity {
         password = relativeLayout.findViewById(R.id.password_sign_in);
         userSignIn = relativeLayout.findViewById(R.id.sign_in_button);
         linkSignUp = relativeLayout.findViewById(R.id.sign_up_link);
+        resetPasswordTextView = relativeLayout.findViewById(R.id.reset_password_text_view);
         progressBar = findViewById(R.id.progressBar);
         user = FirebaseAuth.getInstance().getCurrentUser();
     }

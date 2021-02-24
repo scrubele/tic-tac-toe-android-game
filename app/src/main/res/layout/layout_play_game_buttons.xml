@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/loginCard"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/whiteCardColor"
+    android:elevation="5dp"
+    app:cardCornerRadius="@dimen/loginCardRadius">
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin">
+
+        <Button
+            android:id="@+id/onlineGame"
+            style="@style/loginButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="@string/ONLINE" />
+
+        <Button
+            android:id="@+id/offlineGame"
+            style="@style/loginButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="@string/OFFLINE" />
+
+        <Button
+            android:id="@+id/rank"
+            style="@style/loginButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:onClick="startOnLineGame"
+            android:text="@string/RANK" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="172dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
