@@ -104,17 +104,17 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
 
         for (int i = 0; i < 5; i++) {
-            for(int j=0;j<3;j++){
-                if (field[i][j].equals(field[i][j+1]) && field[i][j].equals(field[i][j+2]) && !field[i][j].equals("")) {
+            for(int j=0;j<2;j++){
+                if (field[i][j].equals(field[i][j+1]) && field[i][j].equals(field[i][j+2])&& field[i][j].equals(field[i][j+3]) && !field[i][j].equals("")) {
                     return true;
                  }
             }
 
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             for(int j=0;j<5;j++){
-                if (field[i][j].equals(field[i+1][j]) && field[i][j].equals(field[i+2][j]) && !field[i][j].equals("")) {
+                if (field[i][j].equals(field[i+1][j]) && field[i][j].equals(field[i+2][j])&& field[i][j].equals(field[i+3][j]) && !field[i][j].equals("")) {
                     return true;
                 }
             }
@@ -122,16 +122,16 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-        /*for (int i=0; i<3;i++){
-            if (field[i][i].equals(field[i+1][i+1]) && field[i][i].equals(field[i+2][i+2]) && !field[0][0].equals("")) {
+        for (int i=0; i<2;i++){
+            if (field[i][i].equals(field[i+1][i+1]) && field[i][i].equals(field[i+2][i+2])&& field[i][i].equals(field[i+3][i+3]) && !field[i][i].equals("")) {
                 return true;
             }
-        }*/
+        }
 
 
-        for (int i=4; i>1;i--){
-            for(int j=0; j<3;j++)
-                {if (field[i][j].equals(field[i-1][j+1]) && field[i][j].equals(field[i-2][j+2]) && !field[i][j].equals("")) {
+        for (int i=4; i>2;i--){
+            for(int j=0; j<2;j++)
+                {if (field[i][j].equals(field[i-1][j+1]) && field[i][j].equals(field[i-2][j+2])&& field[i][j].equals(field[i-3][j+3]) && !field[i][j].equals("")) {
                 return true;
                 }
             }
@@ -164,8 +164,6 @@ public class FByFGameActivity extends AppCompatActivity implements View.OnClickL
     private void updatePointsText() {
         textViewPlayer1.setText(NAME1 + " : " + Player1Points);
         textViewPlayer2.setText(NAME2 + " : " + Player2Points);
-
-
     }
 
     private void resetBoard() {
