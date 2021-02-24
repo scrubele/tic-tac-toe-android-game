@@ -43,11 +43,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/LoginBut"
+            android:id="@+id/startGameButton"
             style="@style/loginButton"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:onClick="Submit"
             android:text="@string/start_game" />
 
     </LinearLayout>

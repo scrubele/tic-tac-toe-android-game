@@ -13,11 +13,11 @@ import android.widget.Toast;
 
 import com.example.tictactoegame.R;
 
-public class OfflinePageActivity extends AppCompatActivity implements View.OnClickListener {
+public class FByFGameActivity extends AppCompatActivity implements View.OnClickListener {
 
     String NAME1;
     String NAME2;
-    private Button[][] buttons = new Button[3][3];
+    private Button[][] buttons = new Button[5][5];
     private boolean player1Turn = true;
     private int roundCount;
     private int Player1Points;
@@ -32,7 +32,7 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_game_page);
+        setContentView(R.layout.activity_f_by_f_game);
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
@@ -49,13 +49,12 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         user2_name.setTextColor(getResources().getColor(R.color.Black));
 
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);
-
             }
         }
 
@@ -70,7 +69,6 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
 
 
     }
-
 
     @Override
     public void onClick(View v) {
@@ -87,6 +85,7 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
             user2_name.setTextColor(getResources().getColor(R.color.Black));
         }
 
+
         roundCount++;
         if (checkForWin()) {
             if (player1Turn) {
@@ -95,7 +94,7 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
                 player2Wins();
             }
 
-        } else if (roundCount == 9) {
+        } else if (roundCount == 25) {
             draw();
         } else {
             player1Turn = !player1Turn;
@@ -103,34 +102,46 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
     }
 
     private boolean checkForWin() {
-        String[][] field = new String[3][3];
+        String[][] field = new String[5][5];
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 field[i][j] = buttons[i][j].getText().toString();
             }
         }
 
-        for (int i = 0; i < 3; i++) {
-            if (field[i][0].equals(field[i][1]) && field[i][0].equals(field[i][2]) && !field[i][0].equals("")) {
-                return true;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (field[i][j].equals(field[i][j + 1]) && field[i][j].equals(field[i][j + 2]) && !field[i][j].equals("")) {
+                    return true;
+                }
             }
 
         }
 
         for (int i = 0; i < 3; i++) {
-            if (field[0][i].equals(field[1][i]) && field[0][i].equals(field[2][i]) && !field[0][i].equals("")) {
-                return true;
+            for (int j = 0; j < 5; j++) {
+                if (field[i][j].equals(field[i + 1][j]) && field[i][j].equals(field[i + 2][j]) && !field[i][j].equals("")) {
+                    return true;
+                }
             }
 
         }
 
-        if (field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !field[0][0].equals("")) {
-            return true;
-        }
 
-        if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].equals("")) {
-            return true;
+        /*for (int i=0; i<3;i++){
+            if (field[i][i].equals(field[i+1][i+1]) && field[i][i].equals(field[i+2][i+2]) && !field[0][0].equals("")) {
+                return true;
+            }
+        }*/
+
+
+        for (int i = 4; i > 1; i--) {
+            for (int j = 0; j < 3; j++) {
+                if (field[i][j].equals(field[i - 1][j + 1]) && field[i][j].equals(field[i - 2][j + 2]) && !field[i][j].equals("")) {
+                    return true;
+                }
+            }
         }
 
         return false;
@@ -141,6 +152,7 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         Player1Points++;
         Toast.makeText(this, NAME1 + " WINS!", Toast.LENGTH_SHORT).show();
         updatePointsText();
+
         resetBoard();
     }
 
@@ -160,11 +172,12 @@ public class OfflinePageActivity extends AppCompatActivity implements View.OnCli
         textViewPlayer1.setText(" " + Player1Points);
         textViewPlayer2.setText(" " + Player2Points);
 
+
     }
 
     private void resetBoard() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 buttons[i][j].setText("");
             }
         }

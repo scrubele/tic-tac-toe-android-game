@@ -19,6 +19,15 @@
             android:name=".activities.OfflinePageActivity"
             android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity
+            android:name=".activities.OnlinePlayerActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
+            android:name=".activities.FByFGameActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
+            android:name=".activities.ChooseGameSizeActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
             android:name=".activities.ResetPasswordActivity"
             android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity

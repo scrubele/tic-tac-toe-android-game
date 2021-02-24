@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.PlayGameFragment">
+    style="@style/loginParent"
+    android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -32,7 +31,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="275dp"
                 android:layout_alignParentTop="true"
                 android:weightSum="12">
 
@@ -66,8 +65,8 @@
 
 
                 <include
-                    android:id="@+id/layout_play_game"
-                    layout="@layout/layout_play_game_buttons"
+                    android:id="@+id/layout_choose_game_size"
+                    layout="@layout/layout_choose_game_size"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="40dp" />
@@ -76,7 +75,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="275dp"
                 android:layout_marginTop="500dp"
                 android:translationZ="-12dp"
                 android:weightSum="22">
@@ -101,6 +100,5 @@
 
     </ScrollView>
 
-</FrameLayout>
-
+</RelativeLayout>
 

@@ -28,16 +28,17 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
             android:layout_marginLeft="170dp"
             android:layout_marginTop="7dp"
             android:freezesText="true"
             android:text="@string/player_0"
+            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/RL"
         android:layout_width="match_parent"
@@ -87,11 +88,11 @@
             android:id="@+id/user2_name"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
             android:freezesText="true"
             android:text="@string/player_2"
+            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 

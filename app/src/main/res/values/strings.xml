@@ -65,5 +65,8 @@
     <string name="sent_intstructions_to_reset_password">We have sent you instructions to reset your password!</string>
     <string name="player_x">Player X</string>
     <string name="player_0">Player O</string>
+    <string name="_3x3_game_size">3x3 game size</string>
+    <string name="play_3x3_size">Play 3x3 size</string>
+    <string name="play_5x5_size">Play 5x5 size</string>
 
 </resources>
