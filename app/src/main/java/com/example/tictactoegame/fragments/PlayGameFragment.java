@@ -13,6 +13,7 @@ import com.example.tictactoegame.R;
 import com.example.tictactoegame.activities.ChooseGameSizeActivity;
 import com.example.tictactoegame.activities.ChoosePlayerActivity;
 import com.example.tictactoegame.activities.OnlinePlayerActivity;
+import com.example.tictactoegame.activities.RankPageActivity;
 
 import java.util.Objects;
 
@@ -42,6 +43,11 @@ public class PlayGameFragment extends Fragment implements View.OnClickListener {
         startActivity(intent);
     }
 
+    public void startRank(View view) {
+        Intent intent = new Intent(Objects.requireNonNull(this.getActivity()).getApplicationContext(), RankPageActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -53,7 +59,7 @@ public class PlayGameFragment extends Fragment implements View.OnClickListener {
 //                startOnLineGame(v);
 //                break;
             case R.id.rank:
-                //startRank(v);
+                startRank(v);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());

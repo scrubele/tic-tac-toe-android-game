@@ -25,6 +25,9 @@
             android:name=".activities.FByFGameActivity"
             android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity
+            android:name=".activities.RankPageActivity"
+            android:theme="@style/Theme.TICTACTAOEGAME" />
+        <activity
             android:name=".activities.ChooseGameSizeActivity"
             android:theme="@style/Theme.TICTACTAOEGAME" />
         <activity
