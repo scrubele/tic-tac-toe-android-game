@@ -85,11 +85,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void sendNotification(TicTacToe ticTacToe) {
         Intent intent = new Intent(this, ItemDetailsActivity.class);
-        intent.putExtra("ticTacToe_name", ticTacToe.getName());
-        intent.putExtra("ticTacToe_company", ticTacToe.getCompany());
-        intent.putExtra("ticTacToe_goods", ticTacToe.getGood());
-        intent.putExtra("ticTacToe_address", ticTacToe.getAddress());
-        intent.putExtra("ticTacToe_img_url", ticTacToe.getPicture());
+        intent.putExtra("tic_tac_toe_name", ticTacToe.getName());
+        intent.putExtra("tic_tac_toe_game_type", ticTacToe.getGameType());
+        intent.putExtra("tic_tac_toe_description", ticTacToe.getDescription());
+        intent.putExtra("tic_tac_toe_img_url", ticTacToe.getPicture());
         intent.putExtra("ticTacToe_err_mes", message);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

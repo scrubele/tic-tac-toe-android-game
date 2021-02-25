@@ -2,17 +2,14 @@ package com.example.tictactoegame.entities;
 
 public class TicTacToe {
     private final String name;
-    private final String company;
-    private final String good;
-    private final String address;
+    private final String gameType;
+    private final String description;
     private final String picture;
 
-    public TicTacToe(String name, String company, String good,
-                     String address, String url) {
+    public TicTacToe(String name, String gameType, String description, String url) {
         this.name = name;
-        this.company = company;
-        this.good = good;
-        this.address = address;
+        this.gameType = gameType;
+        this.description = description;
         this.picture = url;
     }
 
@@ -20,16 +17,12 @@ public class TicTacToe {
         return name;
     }
 
-    public String getCompany() {
-        return company;
+    public String getGameType() {
+        return gameType;
     }
 
-    public String getGood() {
-        return good;
-    }
-
-    public String getAddress() {
-        return address;
+    public String getDescription() {
+        return description;
     }
 
     public String getPicture() {

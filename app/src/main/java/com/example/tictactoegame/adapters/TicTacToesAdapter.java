@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,9 +45,8 @@ public class TicTacToesAdapter extends RecyclerView.Adapter<TicTacToesAdapter.Ti
     public void onBindViewHolder(final TicTacToeViewHolder holder,
                                  final int position) {
         holder.ticTacToeName.setText(tictactoes.get(position).getName());
-        holder.ticTacToeCompany.setText(tictactoes.get(position).getCompany());
-        holder.ticTacToeGood.setText(tictactoes.get(position).getGood());
-        holder.ticTacToeAddress.setText(tictactoes.get(position).getAddress());
+        holder.ticTacToeGameType.setText(tictactoes.get(position).getGameType());
+        holder.ticTacToeDescription.setText(tictactoes.get(position).getDescription());
         Picasso.get()
                 .load(tictactoes.get(position).getPicture())
                 .placeholder(R.drawable.tic_tac_toe_placeholder)
@@ -64,11 +62,10 @@ public class TicTacToesAdapter extends RecyclerView.Adapter<TicTacToesAdapter.Ti
         Log.d("FROM", tictactoes.toString());
 
         Intent intent = new Intent(mContext, ItemDetailsActivity.class);
-        intent.putExtra("ticTacToe_name", tictactoes.get(position).getName());
-        intent.putExtra("ticTacToe_company", tictactoes.get(position).getCompany());
-        intent.putExtra("ticTacToe_goods", tictactoes.get(position).getGood());
-        intent.putExtra("ticTacToe_address", tictactoes.get(position).getAddress());
-        intent.putExtra("ticTacToe_img_url", tictactoes.get(position).getPicture());
+        intent.putExtra("tic_tac_toe_name", tictactoes.get(position).getName());
+        intent.putExtra("tic_tac_toe_game_type", tictactoes.get(position).getGameType());
+        intent.putExtra("tic_tac_toe_description", tictactoes.get(position).getDescription());
+        intent.putExtra("tic_tac_toe_img_url", tictactoes.get(position).getPicture());
 
         mContext.startActivity(intent);
     }
@@ -83,19 +80,17 @@ public class TicTacToesAdapter extends RecyclerView.Adapter<TicTacToesAdapter.Ti
     }
 
     class TicTacToeViewHolder extends RecyclerView.ViewHolder {
-        private TextView ticTacToeName;
-        private TextView ticTacToeCompany;
-        private TextView ticTacToeGood;
-        private TextView ticTacToeAddress;
-        private ImageView ticTacToeImageUrl;
+        private final TextView ticTacToeName;
+        private final TextView ticTacToeGameType;
+        private final TextView ticTacToeDescription;
+        private final ImageView ticTacToeImageUrl;
         private ConstraintLayout parentLayout;
 
         TicTacToeViewHolder(final View itemView) {
             super(itemView);
             ticTacToeName = itemView.findViewById(R.id.item_tic_tac_toe_name);
-            ticTacToeCompany = itemView.findViewById(R.id.item_tic_tac_toe_company);
-            ticTacToeGood = itemView.findViewById(R.id.item_tic_tac_toe_good);
-            ticTacToeAddress = itemView.findViewById(R.id.item_tic_tac_toe_address);
+            ticTacToeGameType = itemView.findViewById(R.id.item_tic_tac_toe_game_type);
+            ticTacToeDescription = itemView.findViewById(R.id.item_tic_tac_toe_description);
             ticTacToeImageUrl = itemView.findViewById(R.id.item_tic_tac_toe_img);
             parentLayout = itemView.findViewById(R.id.parent_layout);
         }

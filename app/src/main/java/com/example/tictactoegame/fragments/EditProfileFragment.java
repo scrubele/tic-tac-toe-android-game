@@ -18,11 +18,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tictactoegame.R;
-import com.example.tictactoegame.activities.ChoosePlayerActivity;
 import com.example.tictactoegame.activities.SignInActivity;
 import com.example.tictactoegame.helpers.ConfigHelper;
 import com.example.tictactoegame.utils.ApplicationEx;
@@ -45,14 +42,20 @@ import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
 
-public class ProfileFragment extends Fragment {
+public class EditProfileFragment extends Fragment {
     private static final int IMAGE_REQUEST = 1;
     private static final int TARGET_WIDTH = 100;
     private static final int TARGET_HEIGHT = 100;
 
+    private Button uploadImgButton;
     private Button editProfileButton;
     private ImageView profileImage;
+    private Button newEmailButton;
+    private Button newNameButton;
     private Button signOutButton;
+    private Button backButton;
+    private EditText newEmail;
+    private EditText newName;
     private TextView profileName;
     private TextView profileEmail;
     private ProgressDialog progressDialog;
@@ -71,7 +74,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_profile, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_edit_profile, container, false);
 
         setupViews(inflate);
 
@@ -89,45 +92,52 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        showEmail();
-        showName();
-
+        uploadImgButton.setOnClickListener(view -> openImage());
+        newNameButton.setOnClickListener(view -> updateName());
+        newEmailButton.setOnClickListener(view -> updateEmail());
         signOutButton.setOnClickListener(view -> signOut());
-        editProfileButton.setOnClickListener(view -> launchEditProfile());
+        backButton.setOnClickListener(view -> launchProfile());
         return inflate;
     }
 
-    private void showEmail() {
-        String email = firebaseUser.getEmail();
-        profileEmail.setText(email);
+    private void updateEmail() {
+        String email = newEmail.getText().toString();
+        if (validateEmail(email)) {
+            firebaseUser.updateEmail(email)
+                    .addOnCompleteListener(task1 -> {
+                        if (task1.isSuccessful()) {
+                            Toast.makeText(getContext(), getString(R.string.email_updated),
+                                    Toast.LENGTH_SHORT).show();
+                            newEmail.getText().clear();
+                        }
+                    });
+        }
     }
 
-    private void showName() {
-        nameRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                profileName.setText(value);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getContext(), getString(R.string.failed_load_image), Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void updateName() {
+        String name = newName.getText().toString();
+        if (validateName(name)) {
+            reference.child("name").setValue(name);
+            Toast.makeText(getContext(), getString(R.string.name_updated), Toast.LENGTH_SHORT).show();
+            newName.getText().clear();
+        }
     }
-
 
     private void setupViews(View inflate) {
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         mAuth = getApplicationEx().getAuth();
-        reference = FirebaseDatabase.getInstance(Objects.requireNonNull(ConfigHelper.getConfigValue(this.getContext(), "firebase_url"))).getReference("users").child(firebaseUser.getUid());
+        reference = FirebaseDatabase.getInstance(ConfigHelper.getConfigValue(this.getContext(), "firebase_url")).getReference("users").child(firebaseUser.getUid());
+        uploadImgButton = inflate.findViewById(R.id.new_image_button);
+        newEmailButton = inflate.findViewById(R.id.new_email_button);
+        newNameButton = inflate.findViewById(R.id.new_name_button);
+        signOutButton = inflate.findViewById(R.id.sign_out_button);
+        backButton = inflate.findViewById(R.id.button_back);
+        newName = inflate.findViewById(R.id.name_new);
+        newEmail = inflate.findViewById(R.id.email_new);
         profileName = inflate.findViewById(R.id.username);
         profileEmail = inflate.findViewById(R.id.user_email);
         profileImage = inflate.findViewById(R.id.image_profile);
-        signOutButton = inflate.findViewById(R.id.sign_out_button);
-        editProfileButton = inflate.findViewById(R.id.edit_profile_button);
         urlRef = reference.child("imageURL");
         nameRef = reference.child("name");
         progressDialog = new ProgressDialog(getContext());
@@ -207,6 +217,29 @@ public class ProfileFragment extends Fragment {
                 .into(profileImage);
     }
 
+    private boolean validateEmail(final String mEmail) {
+        if (mEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+            String emailError = getString(R.string.email_error);
+            newEmail.setError(emailError);
+            return false;
+        } else {
+            newEmail.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateName(final String mName) {
+        String nameRegex = getString(R.string.name_regex);
+        if (!mName.matches(nameRegex)) {
+            String nameError = getString(R.string.name_error);
+            newName.setError(nameError);
+            return false;
+        } else {
+            newName.setError(null);
+            return true;
+        }
+    }
+
     private void signOut() {
         mAuth.signOut();
         Intent intent = new Intent(Objects.requireNonNull(this.getActivity()).getApplicationContext(), SignInActivity.class);
@@ -214,13 +247,14 @@ public class ProfileFragment extends Fragment {
         getActivity().onBackPressed();
     }
 
-    private void launchEditProfile() {
+    private void launchProfile() {
         FrameLayout fl = (FrameLayout) this.getActivity().findViewById(R.id.scrool);
         fl.removeAllViews();
-        EditProfileFragment nextFrag = new EditProfileFragment();
+        ProfileFragment nextFrag = new ProfileFragment();
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.scrool, nextFrag, "findThisFragment")
                 .commit();
+
     }
 
     private ApplicationEx getApplicationEx() {

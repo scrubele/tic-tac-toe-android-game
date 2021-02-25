@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -18,18 +19,27 @@ import com.google.android.material.card.MaterialCardView;
 import java.util.Objects;
 
 public class ChooseGameSizeActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button buttonOfflineGame;
+    Button buttonOnlineGame;
+    ImageButton backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_game_size);
 
-        MaterialCardView relativeLayout = (MaterialCardView) findViewById(R.id.layout_choose_game_size);
-
-        Button buttonOfflineGame = relativeLayout.findViewById(R.id._3x3GameSize);
+        setupViews();
         buttonOfflineGame.setOnClickListener(this);
-        Button buttonOnlineGame = relativeLayout.findViewById(R.id._5x5GameSize);
         buttonOnlineGame.setOnClickListener(this);
+    }
+
+    public void setupViews() {
+        MaterialCardView relativeLayout = (MaterialCardView) findViewById(R.id.layout_choose_game_size);
+        buttonOfflineGame = relativeLayout.findViewById(R.id._3x3GameSize);
+        buttonOnlineGame = relativeLayout.findViewById(R.id._5x5GameSize);
+        backButton = findViewById(R.id.button_back);
     }
 
     public void start3x3Game(View view) {
